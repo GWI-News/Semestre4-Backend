@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GwiNews.API", "GwiNews.API\GwiNews.API.csproj", "{8AB484B3-4F65-469F-94D8-4971E00BA7FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GwiNews.Application", "GwiNews.Application\GwiNews.Application.csproj", "{50F64999-A4B5-4BB6-8830-B09E37F3F87F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GwiNews.Domain", "GwiNews.Domain\GwiNews.Domain.csproj", "{28447194-82AA-4AD7-A95A-E5BB6193C0B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GwiNews.Infra.Data", "GwiNews.Infra.Data\GwiNews.Infra.Data.csproj", "{90A3D07A-925F-41C7-AE88-9137B5A499E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GwiNews.Domain.Test", "GwiNews.Domain.Test\GwiNews.Domain.Test.csproj", "{C3933C97-F4D3-4296-8066-9C46C27FE6C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GwiNews.Infra.IoC", "GwiNews.Infra.IoC\GwiNews.Infra.IoC.csproj", "{46B36E78-4366-44BF-A5C8-2F2EB232D871}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AB484B3-4F65-469F-94D8-4971E00BA7FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AB484B3-4F65-469F-94D8-4971E00BA7FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AB484B3-4F65-469F-94D8-4971E00BA7FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AB484B3-4F65-469F-94D8-4971E00BA7FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50F64999-A4B5-4BB6-8830-B09E37F3F87F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F64999-A4B5-4BB6-8830-B09E37F3F87F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F64999-A4B5-4BB6-8830-B09E37F3F87F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F64999-A4B5-4BB6-8830-B09E37F3F87F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28447194-82AA-4AD7-A95A-E5BB6193C0B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28447194-82AA-4AD7-A95A-E5BB6193C0B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28447194-82AA-4AD7-A95A-E5BB6193C0B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28447194-82AA-4AD7-A95A-E5BB6193C0B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90A3D07A-925F-41C7-AE88-9137B5A499E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90A3D07A-925F-41C7-AE88-9137B5A499E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90A3D07A-925F-41C7-AE88-9137B5A499E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90A3D07A-925F-41C7-AE88-9137B5A499E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3933C97-F4D3-4296-8066-9C46C27FE6C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3933C97-F4D3-4296-8066-9C46C27FE6C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3933C97-F4D3-4296-8066-9C46C27FE6C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3933C97-F4D3-4296-8066-9C46C27FE6C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46B36E78-4366-44BF-A5C8-2F2EB232D871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B36E78-4366-44BF-A5C8-2F2EB232D871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B36E78-4366-44BF-A5C8-2F2EB232D871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B36E78-4366-44BF-A5C8-2F2EB232D871}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B109B80-2D94-4B85-9B8B-7E3C35905539}
+	EndGlobalSection
+EndGlobal
