@@ -1,9 +1,10 @@
-﻿using System.ComponentModel;
+﻿using GwiNews.Domain.Interfaces;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace GwiNews.Domain.Interfaces
+namespace GwiNews.Domain.Entities
 {
-    public interface IUser
+    public class UserWithNews : IUser
     {
         [Key]
         public Guid? Id { get; set; }
@@ -22,15 +23,6 @@ namespace GwiNews.Domain.Interfaces
         public string? Password { get; set; }
         [Required]
         public bool? Status { get; set; }
-    }
-
-    public enum UserRole
-    {
-        Administrador = 0,
-        Editor = 1,
-        Autor = 2,
-        Leitor = 3,
-        Marketing = 4,
-        Financeiro = 5
+        public ICollection<News>? UserNews { get; set; }
     }
 }
