@@ -23,6 +23,7 @@ namespace GwiNews.Domain.Entities
         public string? Password { get; set; }
         [Required]
         public bool? Status { get; set; }
-        public ICollection<News>? UserNews { get; set; }
+        public ICollection<News>? AuthoredNews { get; set; }
+        public ICollection<News>? EditedNews { get; set; }
     }
 }
