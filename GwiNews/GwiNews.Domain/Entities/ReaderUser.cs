@@ -24,5 +24,6 @@ namespace GwiNews.Domain.Entities
         [Required]
         public bool? Status { get; set; }
         public ICollection<News>? FavoritedNews { get; set; }
+        public ICollection<ProfessionalInformation>? ProfessionalInformations { get; set; }
     }
 }
