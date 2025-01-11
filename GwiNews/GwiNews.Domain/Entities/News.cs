@@ -38,6 +38,7 @@ namespace GwiNews.Domain.Entities
         [Required]
         public NewsCategory? Category { get; set; }
         public ICollection<NewsSubcategory>? Subcategories { get; set; }
+        public ICollection<ReaderUser>? FavoritedBy { get; set; }
     }
 
     public enum NewsStatus
