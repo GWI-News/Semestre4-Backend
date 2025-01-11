@@ -26,7 +26,11 @@ namespace GwiNews.Domain.Entities
         [Required]
         public DateTime? PublishDate { get; set; }
         [Required]
+        public Guid? AuthorId { get; set; }
+        [Required]
         public UserWithNews? Author { get; set; }
+        [Required]
+        public Guid? EditorId { get; set; }
         [Required]
         public UserWithNews? Editor { get; set; }
     }
