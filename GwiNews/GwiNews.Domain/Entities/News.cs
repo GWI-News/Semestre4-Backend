@@ -25,6 +25,10 @@ namespace GwiNews.Domain.Entities
         public string? ImageUrl { get; set; }
         [Required]
         public DateTime? PublishDate { get; set; }
+        [Required]
+        public UserWithNews? Author { get; set; }
+        [Required]
+        public UserWithNews? Editor { get; set; }
     }
 
     public enum NewsStatus
