@@ -33,6 +33,10 @@ namespace GwiNews.Domain.Entities
         public Guid? EditorId { get; set; }
         [Required]
         public UserWithNews? Editor { get; set; }
+        [Required]
+        public Guid? CategoryId { get; set; }
+        [Required]
+        public NewsCategory? Category { get; set; }
     }
 
     public enum NewsStatus
