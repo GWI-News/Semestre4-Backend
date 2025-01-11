@@ -2,14 +2,17 @@
 
 namespace GwiNews.Domain.Entities
 {
-    public class NewsCategory
+    public class NewsSubcategory
     {
         [Key]
         public Guid? Id { get; set; }
         [Required]
-        [StringLength(25)]
+        [StringLength(55)]
         public string? Name { get; set; }
+        [Required]
+        public Guid? CategoryId { get; set; }
+        [Required]
+        public NewsCategory? Category { get; set; }
         public ICollection<News>? News { get; set; }
-        public ICollection<NewsSubcategory>? Subcategories { get; set; }
     }
 }

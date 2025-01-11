@@ -37,6 +37,7 @@ namespace GwiNews.Domain.Entities
         public Guid? CategoryId { get; set; }
         [Required]
         public NewsCategory? Category { get; set; }
+        public ICollection<NewsSubcategory>? Subcategories { get; set; }
     }
 
     public enum NewsStatus
