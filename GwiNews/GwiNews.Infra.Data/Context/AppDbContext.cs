@@ -9,12 +9,12 @@ namespace GwiNews.Infra.Data.Context
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         { }
 
-        
+        public DbSet<UserWithNews> UsersWithNews { get; set; }
         public DbSet<News> News { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+            modelBuilder.ApplyConfiguration(new UserWithNewsConfiguration());
             modelBuilder.ApplyConfiguration(new NewsConfiguration());
         }
     }
