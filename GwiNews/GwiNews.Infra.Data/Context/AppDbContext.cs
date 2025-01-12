@@ -1,6 +1,7 @@
 ﻿using GwiNews.Domain.Entities;
 using GwiNews.Infra.Data.EntityConfiguration;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace GwiNews.Infra.Data.Context
 {
@@ -16,6 +17,7 @@ namespace GwiNews.Infra.Data.Context
         public DbSet<ReaderUser> ReaderUsers { get; set; }
         public DbSet<ProfessionalInformation> ProfessionalInformations { get; set; }
         public DbSet<ProfessionalSkill> ProfessionalSkills { get; set; }
+        public DbSet<Formation> Formations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,6 +28,7 @@ namespace GwiNews.Infra.Data.Context
             modelBuilder.ApplyConfiguration(new ReaderUserConfiguration());
             modelBuilder.ApplyConfiguration(new ProfessionalInformationConfiguration());
             modelBuilder.ApplyConfiguration(new ProfessionalSkillConfiguration());
+            modelBuilder.ApplyConfiguration(new FormationConfiguration());
         }
     }
 }
