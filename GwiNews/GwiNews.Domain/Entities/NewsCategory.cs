@@ -9,6 +9,8 @@ namespace GwiNews.Domain.Entities
         [Required]
         [StringLength(25)]
         public string? Name { get; set; }
+        [Required]
+        public bool? Status { get; set; }
         public ICollection<News>? News { get; set; }
         public ICollection<NewsSubcategory>? Subcategories { get; set; }
     }
