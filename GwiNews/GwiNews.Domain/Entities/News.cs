@@ -43,9 +43,9 @@ namespace GwiNews.Domain.Entities
 
     public enum NewsStatus
     {
-        Publicada = 0,
-        EmRevisao = 1,
-        Rascunho = 2,
-        Inativa = 3
+        Published = 0,
+        InRevision = 1,
+        Draft = 2,
+        Inactive = 3
     }
 }
