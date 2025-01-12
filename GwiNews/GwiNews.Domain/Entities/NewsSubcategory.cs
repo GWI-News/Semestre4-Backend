@@ -10,6 +10,8 @@ namespace GwiNews.Domain.Entities
         [StringLength(55)]
         public string? Name { get; set; }
         [Required]
+        public bool? Status { get; set; }
+        [Required]
         public Guid? CategoryId { get; set; }
         [Required]
         public NewsCategory? Category { get; set; }

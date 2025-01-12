@@ -10,6 +10,7 @@ namespace GwiNews.Infra.Data.EntityConfiguration
         {
             builder.HasKey(ns => ns.Id);
             builder.Property(ns => ns.Name).IsRequired().HasMaxLength(55);
+            builder.Property(ns => ns.Status).IsRequired();
             builder.HasMany(ns => ns.News).WithMany(n => n.Subcategories);
         }
     }
