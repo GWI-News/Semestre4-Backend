@@ -10,6 +10,7 @@ namespace GwiNews.Infra.Data.EntityConfiguration
         {
             builder.HasKey(nc => nc.Id);
             builder.Property(nc => nc.Name).IsRequired().HasMaxLength(25);
+            builder.Property(nc => nc.Status).IsRequired();
             builder.HasMany(nc => nc.News).WithOne(n => n.Category).HasForeignKey(n => n.CategoryId).OnDelete(DeleteBehavior.Restrict);
             builder.HasMany(nc => nc.Subcategories).WithOne(ns => ns.Category).HasForeignKey(ns => ns.CategoryId).OnDelete(DeleteBehavior.Restrict);
         }
