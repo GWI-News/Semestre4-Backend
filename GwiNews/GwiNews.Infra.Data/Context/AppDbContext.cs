@@ -15,8 +15,6 @@ namespace GwiNews.Infra.Data.Context
         public DbSet<NewsSubcategory> NewsSubcategories { get; set; }
         public DbSet<ReaderUser> ReaderUsers { get; set; }
         public DbSet<ProfessionalInformation> ProfessionalInformations { get; set; }
-        public DbSet<ProfessionalSkill> ProfessionalSkills { get; set; }
-        public DbSet<Formation> Formations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,6 +23,7 @@ namespace GwiNews.Infra.Data.Context
             modelBuilder.ApplyConfiguration(new NewsCategoryConfiguration());
             modelBuilder.ApplyConfiguration(new NewsSubcategoryConfiguration());
             modelBuilder.ApplyConfiguration(new ReaderUserConfiguration());
+            modelBuilder.ApplyConfiguration(new ProfessionalInformationConfiguration());
         }
     }
 }
