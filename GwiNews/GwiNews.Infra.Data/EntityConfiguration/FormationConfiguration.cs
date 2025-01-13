@@ -16,6 +16,7 @@ namespace GwiNews.Infra.Data.EntityConfiguration
             builder.Property(f => f.Activity1).IsRequired().HasMaxLength(255);
             builder.Property(f => f.Activity2).IsRequired().HasMaxLength(255);
             builder.Property(f => f.Activity3).IsRequired().HasMaxLength(255);
+            builder.Property(f => f.Status).IsRequired();
         }
     }
 }
