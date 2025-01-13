@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GwiNews.Infra.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class FinalMigration : Migration
+    public partial class LocalMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,7 +16,8 @@ namespace GwiNews.Infra.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -61,6 +62,7 @@ namespace GwiNews.Infra.Data.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(55)", maxLength: 55, nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
                     CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
@@ -86,6 +88,7 @@ namespace GwiNews.Infra.Data.Migrations
                     Activity1 = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Activity2 = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Activity3 = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
@@ -109,6 +112,7 @@ namespace GwiNews.Infra.Data.Migrations
                     CompleteAddress = table.Column<string>(type: "nvarchar(510)", maxLength: 510, nullable: false),
                     Objective = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     ImgUrl = table.Column<string>(type: "nvarchar(510)", maxLength: 510, nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
                     WorkPlatformUrl = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
@@ -132,6 +136,7 @@ namespace GwiNews.Infra.Data.Migrations
                     Skill2 = table.Column<string>(type: "nvarchar(55)", maxLength: 55, nullable: false),
                     Skill3 = table.Column<string>(type: "nvarchar(55)", maxLength: 55, nullable: false),
                     Skill4 = table.Column<string>(type: "nvarchar(55)", maxLength: 55, nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>

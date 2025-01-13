@@ -61,6 +61,10 @@ namespace GwiNews.Infra.Data.Migrations
                         .IsRequired()
                         .HasColumnType("datetime2");
 
+                    b.Property<bool?>("Status")
+                        .IsRequired()
+                        .HasColumnType("bit");
+
                     b.Property<Guid?>("UserId")
                         .IsRequired()
                         .HasColumnType("uniqueidentifier");
@@ -144,6 +148,10 @@ namespace GwiNews.Infra.Data.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
+                    b.Property<bool?>("Status")
+                        .IsRequired()
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("NewsCategories");
@@ -163,6 +171,10 @@ namespace GwiNews.Infra.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(55)
                         .HasColumnType("nvarchar(55)");
+
+                    b.Property<bool?>("Status")
+                        .IsRequired()
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -201,6 +213,10 @@ namespace GwiNews.Infra.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
+
+                    b.Property<bool?>("Status")
+                        .IsRequired()
+                        .HasColumnType("bit");
 
                     b.Property<Guid?>("UserId")
                         .IsRequired()
@@ -242,6 +258,10 @@ namespace GwiNews.Infra.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(55)
                         .HasColumnType("nvarchar(55)");
+
+                    b.Property<bool?>("Status")
+                        .IsRequired()
+                        .HasColumnType("bit");
 
                     b.Property<Guid?>("UserId")
                         .IsRequired()
