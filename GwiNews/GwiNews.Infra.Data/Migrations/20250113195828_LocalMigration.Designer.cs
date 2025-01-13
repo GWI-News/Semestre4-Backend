@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GwiNews.Infra.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250112014243_FinalMigration")]
-    partial class FinalMigration
+    [Migration("20250113195828_LocalMigration")]
+    partial class LocalMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -63,6 +63,10 @@ namespace GwiNews.Infra.Data.Migrations
                     b.Property<DateTime?>("StartDate")
                         .IsRequired()
                         .HasColumnType("datetime2");
+
+                    b.Property<bool?>("Status")
+                        .IsRequired()
+                        .HasColumnType("bit");
 
                     b.Property<Guid?>("UserId")
                         .IsRequired()
@@ -147,6 +151,10 @@ namespace GwiNews.Infra.Data.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
+                    b.Property<bool?>("Status")
+                        .IsRequired()
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("NewsCategories");
@@ -166,6 +174,10 @@ namespace GwiNews.Infra.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(55)
                         .HasColumnType("nvarchar(55)");
+
+                    b.Property<bool?>("Status")
+                        .IsRequired()
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -204,6 +216,10 @@ namespace GwiNews.Infra.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
+
+                    b.Property<bool?>("Status")
+                        .IsRequired()
+                        .HasColumnType("bit");
 
                     b.Property<Guid?>("UserId")
                         .IsRequired()
@@ -245,6 +261,10 @@ namespace GwiNews.Infra.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(55)
                         .HasColumnType("nvarchar(55)");
+
+                    b.Property<bool?>("Status")
+                        .IsRequired()
+                        .HasColumnType("bit");
 
                     b.Property<Guid?>("UserId")
                         .IsRequired()
