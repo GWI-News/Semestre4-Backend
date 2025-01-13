@@ -19,6 +19,8 @@ namespace GwiNews.Domain.Entities
         [StringLength(55)]
         public string? Skill4 { get; set; }
         [Required]
+        public bool? Status { get; set; }
+        [Required]
         public Guid? UserId { get; set; }
         [Required]
         public ReaderUser? User { get; set; }
