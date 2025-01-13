@@ -56,7 +56,7 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var professionalSkills = await _context.ProfessionalSkills.Where(ps => ps.Status == true && ps.Id == userId).ToListAsync();
+                var professionalSkills = await _context.ProfessionalSkills.Where(ps => ps.Status == true && ps.UserId == userId).ToListAsync();
                 return professionalSkills;
             }
             catch (Exception ex)
