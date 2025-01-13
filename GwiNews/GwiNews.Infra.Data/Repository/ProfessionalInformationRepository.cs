@@ -43,7 +43,7 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var professionalInformations = await _context.ProfessionalInformations.Where(u => u.Status == true).ToListAsync();
+                var professionalInformations = await _context.ProfessionalInformations.Where(pi => pi.Status == true).ToListAsync();
                 return professionalInformations;
             }
             catch (Exception ex)
@@ -56,7 +56,7 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var professionalInformations = await _context.ProfessionalInformations.Where(u => u.Status == true && u.Id == userId).ToListAsync();
+                var professionalInformations = await _context.ProfessionalInformations.Where(pi => pi.Status == true && pi.UserId == userId).ToListAsync();
                 return professionalInformations;
             }
             catch (Exception ex)
