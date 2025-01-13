@@ -22,6 +22,8 @@ namespace GwiNews.Domain.Entities
         [Required]
         [StringLength(510)]
         public string? ImgUrl { get; set; }
+        [Required]
+        public bool? Status { get; set; }
         [StringLength(255)]
         public string? WorkPlatformUrl { get; set; }
         [Required]

@@ -14,6 +14,7 @@ namespace GwiNews.Infra.Data.EntityConfiguration
             builder.Property(pi => pi.CompleteAddress).IsRequired().HasMaxLength(510);
             builder.Property(pi => pi.Objective).IsRequired().HasMaxLength(255);
             builder.Property(pi => pi.ImgUrl).IsRequired().HasMaxLength(510);
+            builder.Property(pi => pi.Status).IsRequired();
             builder.Property(pi => pi.WorkPlatformUrl).HasMaxLength(255);
         }
     }
