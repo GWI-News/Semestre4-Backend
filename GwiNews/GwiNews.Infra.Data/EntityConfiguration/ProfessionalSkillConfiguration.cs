@@ -13,6 +13,7 @@ namespace GwiNews.Infra.Data.EntityConfiguration
             builder.Property(ps => ps.Skill2).IsRequired().HasMaxLength(55);
             builder.Property(ps => ps.Skill3).IsRequired().HasMaxLength(55);
             builder.Property(ps => ps.Skill4).IsRequired().HasMaxLength(55);
+            builder.Property(ps => ps.Status).IsRequired();
         }
     }
 }
