@@ -39,11 +39,51 @@ namespace GwiNews.Infra.Data.Repository
             }
         }
 
+        public async Task<IEnumerable<News>> GetFavoritedNewsByUserId(Guid userId)
+        {
+            try
+            {
+                var news = await _context.News.Where(n => n.FavoritedBy.Any(u => u.Id == userId)).ToListAsync();
+                return news;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
         public async Task<IEnumerable<News>> GetPublishedNews()
         {
             try
             {
                 var news = await _context.News.Where(n => n.Status == NewsStatus.Published).ToListAsync();
+                return news;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<IEnumerable<News>> GetPublishedNewsByAuthorId(Guid authorId)
+        {
+            try
+            {
+                var news = await _context.News.Where(n => n.Status == NewsStatus.Published && n.AuthorId == authorId).ToListAsync();
+                return news;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<IEnumerable<News>> GetPublishedNewsByEditorId(Guid editorId)
+        {
+            try
+            {
+                var news = await _context.News.Where(n => n.Status == NewsStatus.Published && n.EditorId == editorId).ToListAsync();
                 return news;
             }
             catch (Exception ex)
@@ -65,11 +105,37 @@ namespace GwiNews.Infra.Data.Repository
             }
         }
 
+        public async Task<IEnumerable<News>> GetDraftNewsByAuthorId(Guid authorId)
+        {
+            try
+            {
+                var news = await _context.News.Where(n => n.Status == NewsStatus.Draft && n.AuthorId == authorId).ToListAsync();
+                return news;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public async Task<IEnumerable<News>> GetInRevisionNews()
         {
             try
             {
                 var news = await _context.News.Where(n => n.Status == NewsStatus.InRevision).ToListAsync();
+                return news;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<IEnumerable<News>> GetInRevisionNewsByEditorId(Guid editorId)
+        {
+            try
+            {
+                var news = await _context.News.Where(n => n.Status == NewsStatus.InRevision && n.EditorId == editorId).ToListAsync();
                 return news;
             }
             catch (Exception ex)
