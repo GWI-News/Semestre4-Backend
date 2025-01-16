@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GwiNews.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("GwiNewsAPI/Usuários-com-Notícias")]
     [ApiController]
     public class UserWithNewsController : ControllerBase
     {
