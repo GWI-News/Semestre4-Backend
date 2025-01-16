@@ -39,6 +39,21 @@ namespace GwiNews.Infra.Data.Repository
             }
         }
 
+        public async Task<IEnumerable<NewsSubcategory>> GetNewsSubcategoriesByCategoryId(Guid id)
+        {
+            try
+            {
+                var newsSubcategory = await _context.NewsSubcategories
+                    .Where(ns => ns.CategoryId == id)
+                    .ToListAsync();
+                return newsSubcategory;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public async Task<IEnumerable<NewsSubcategory>> GetActiveNewsSubcategories()
         {
             try
@@ -87,7 +102,7 @@ namespace GwiNews.Infra.Data.Repository
                 newsSubcategory.Status = false;
                 _context.Update(newsSubcategory);
                 await _context.SaveChangesAsync();
-                return await _context.NewsSubcategories.ToListAsync();
+                return await _context.NewsSubcategories.Where(ns => ns.Status == true).ToListAsync();
             }
             catch (Exception ex)
             {

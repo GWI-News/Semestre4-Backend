@@ -6,6 +6,7 @@ namespace GwiNews.Domain.Interfaces
     {
         public Task<IEnumerable<NewsSubcategory>> GetNewsSubcategories();
         public Task<NewsSubcategory> GetNewsSubcategory(Guid id);
+        public Task<IEnumerable<NewsSubcategory>> GetNewsSubcategoriesByCategoryId(Guid id);
         public Task<IEnumerable<NewsSubcategory>> GetActiveNewsSubcategories();
         public Task<NewsSubcategory> CreateNewsSubcategory(NewsSubcategory newsSubcategory);
         public Task<NewsSubcategory> UpdateNewsSubcategory(NewsSubcategory newsSubcategory);
