@@ -179,7 +179,7 @@ namespace GwiNews.Infra.Data.Repository
                 news.Status = NewsStatus.Inactive;
                 _context.Update(news);
                 await _context.SaveChangesAsync();
-                return await _context.News.ToListAsync();
+                return await _context.News.Where(n => n.Status != NewsStatus.Inactive).ToListAsync();
             }
             catch (Exception ex)
             {
