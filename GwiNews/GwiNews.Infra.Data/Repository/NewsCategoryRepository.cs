@@ -30,7 +30,10 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var newsCategory = await _context.NewsCategories.FindAsync(id);
+                var newsCategory = await _context.NewsCategories
+                    .Include(nc => nc.News)
+                    .Include(nc => nc.Subcategories)
+                    .FirstOrDefaultAsync(nc => nc.Id == id);
                 return newsCategory;
             }
             catch (Exception ex)
@@ -87,7 +90,7 @@ namespace GwiNews.Infra.Data.Repository
                 newsCategory.Status = false;
                 _context.Update(newsCategory);
                 await _context.SaveChangesAsync();
-                return await _context.NewsCategories.ToListAsync();
+                return await _context.NewsCategories.Where(nc => nc.Status == true).ToListAsync();
             }
             catch (Exception ex)
             {
