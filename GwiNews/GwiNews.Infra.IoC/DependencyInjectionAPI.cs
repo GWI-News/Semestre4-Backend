@@ -1,4 +1,7 @@
-﻿using GwiNews.Domain.Interfaces;
+﻿using GwiNews.Application.Interfaces;
+using GwiNews.Application.Mappings;
+using GwiNews.Application.Services;
+using GwiNews.Domain.Interfaces;
 using GwiNews.Infra.Data.Context;
 using GwiNews.Infra.Data.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +25,10 @@ namespace GwiNews.Infra.IoC
             services.AddScoped<IProfessionalInformationRepository, ProfessionalInformationRepository>();
             services.AddScoped<IProfessionalSkillRepository, ProfessionalSkillRepository>();
             services.AddScoped<IFormationRepository, FormationRepository>();
+
+            services.AddScoped<IUserWithNewsService, UserWithNewsService>();
+
+            services.AddAutoMapper(typeof(DomainToDtoMappingProfile));
 
             return services;
         }
