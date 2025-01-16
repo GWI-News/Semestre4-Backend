@@ -27,6 +27,7 @@ namespace GwiNews.Infra.IoC
             services.AddScoped<IFormationRepository, FormationRepository>();
 
             services.AddScoped<IUserWithNewsService, UserWithNewsService>();
+            services.AddScoped<INewsService, NewsService>();
 
             services.AddAutoMapper(typeof(DomainToDtoMappingProfile));
 
