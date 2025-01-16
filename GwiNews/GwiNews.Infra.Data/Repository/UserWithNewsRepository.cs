@@ -30,7 +30,10 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var userWithNews = await _context.UsersWithNews.FindAsync(id);
+                var userWithNews = await _context.UsersWithNews
+                    .Include(u => u.AuthoredNews)
+                    .Include(u => u.EditedNews)
+                    .FirstOrDefaultAsync(u => u.Id == id);
                 return userWithNews;
             }
             catch (Exception ex)
@@ -87,7 +90,7 @@ namespace GwiNews.Infra.Data.Repository
                 userWithNews.Status = false;
                 _context.Update(userWithNews);
                 await _context.SaveChangesAsync();
-                return await _context.UsersWithNews.ToListAsync();
+                return await _context.UsersWithNews.Where(u => u.Status == true).ToListAsync();
             }
             catch (Exception ex)
             {

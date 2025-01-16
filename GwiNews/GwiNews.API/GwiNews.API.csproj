@@ -21,11 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\GwiNews.Infra.IoC\GwiNews.Infra.IoC.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GwiNews.Infra.IoC\GwiNews.Infra.IoC.csproj" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
