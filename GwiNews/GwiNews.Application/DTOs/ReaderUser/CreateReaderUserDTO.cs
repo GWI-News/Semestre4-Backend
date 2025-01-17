@@ -8,14 +8,4 @@
         public string? Password { get; set; }
         public bool? Status { get; set; }
     }
-
-    public enum UserRole
-    {
-        Administrator = 0,
-        Editor = 1,
-        Author = 2,
-        Reader = 3,
-        Marketing = 4,
-        Financial = 5
-    }
 }

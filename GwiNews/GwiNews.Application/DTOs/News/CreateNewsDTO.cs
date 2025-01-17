@@ -14,12 +14,4 @@
         public Guid? CategoryId { get; set; }
         public ICollection<Guid>? Subcategories { get; set; }
     }
-
-    public enum NewsStatus
-    {
-        Published = 0,
-        InRevision = 1,
-        Draft = 2,
-        Inactive = 3
-    }
 }
