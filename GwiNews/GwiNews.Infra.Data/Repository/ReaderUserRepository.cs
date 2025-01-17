@@ -30,7 +30,12 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var readerUser = await _context.ReaderUsers.FindAsync(id);
+                var readerUser = await _context.ReaderUsers
+                    .Include(u => u.FavoritedNews)
+                    .Include(u => u.ProfessionalInformations)
+                    .Include(u => u.ProfessionalSkills)
+                    .Include(u => u.Formations)
+                    .FirstOrDefaultAsync(u => u.Id == id);
                 return readerUser;
             }
             catch (Exception ex)
@@ -87,7 +92,7 @@ namespace GwiNews.Infra.Data.Repository
                 readerUser.Status = false;
                 _context.Update(readerUser);
                 await _context.SaveChangesAsync();
-                return await _context.ReaderUsers.ToListAsync();
+                return await _context.ReaderUsers.Where(u => u.Status == true).ToListAsync();
             }
             catch (Exception ex)
             {
