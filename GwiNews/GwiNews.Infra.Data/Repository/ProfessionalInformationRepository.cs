@@ -65,6 +65,19 @@ namespace GwiNews.Infra.Data.Repository
             }
         }
 
+        public async Task<IEnumerable<ProfessionalInformation>> GetActiveProfessionalInformationsByUserId(Guid userId)
+        {
+            try
+            {
+                var professionalInformations = await _context.ProfessionalInformations.Where(pi => pi.Status == true && pi.UserId == userId).ToListAsync();
+                return professionalInformations;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public async Task<ProfessionalInformation> CreateProfessionalInformation(ProfessionalInformation professionalInformation)
         {
             try
@@ -100,7 +113,7 @@ namespace GwiNews.Infra.Data.Repository
                 professionalInformation.Status = false;
                 _context.Update(professionalInformation);
                 await _context.SaveChangesAsync();
-                return await _context.ProfessionalInformations.ToListAsync();
+                return await _context.ProfessionalInformations.Where(pi => pi.Status == true).ToListAsync();
             }
             catch (Exception ex)
             {

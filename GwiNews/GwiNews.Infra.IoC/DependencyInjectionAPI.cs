@@ -31,6 +31,7 @@ namespace GwiNews.Infra.IoC
             services.AddScoped<INewsCategoryService, NewsCategoryService>();
             services.AddScoped<INewsSubcategoryService, NewsSubcategoryService>();
             services.AddScoped<IReaderUserService, ReaderUserService>();
+            services.AddScoped<IProfessionalInformationService, ProfessionalInformationService>();
 
             services.AddAutoMapper(typeof(DtoToDomainMappingProfile));
 
