@@ -8,6 +8,7 @@ namespace GwiNews.Domain.Interfaces
         public Task<Formation> GetFormation(Guid id);
         public Task<IEnumerable<Formation>> GetActiveFormations();
         public Task<IEnumerable<Formation>> GetFormationsByUserId(Guid userId);
+        public Task<IEnumerable<Formation>> GetActiveFormationsByUserId(Guid userId);
         public Task<Formation> CreateFormation(Formation formation);
         public Task<Formation> UpdateFormation(Formation formation);
         public Task<IEnumerable<Formation>> DeleteFormation(Formation formation);
