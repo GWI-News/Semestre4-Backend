@@ -56,6 +56,19 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
+                var professionalSkills = await _context.ProfessionalSkills.Where(ps => ps.UserId == userId).ToListAsync();
+                return professionalSkills;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<IEnumerable<ProfessionalSkill>> GetActiveProfessionalSkillsByUserId(Guid userId)
+        {
+            try
+            {
                 var professionalSkills = await _context.ProfessionalSkills.Where(ps => ps.Status == true && ps.UserId == userId).ToListAsync();
                 return professionalSkills;
             }
@@ -100,7 +113,7 @@ namespace GwiNews.Infra.Data.Repository
                 professionalSkill.Status = false;
                 _context.Update(professionalSkill);
                 await _context.SaveChangesAsync();
-                return await _context.ProfessionalSkills.ToListAsync();
+                return await _context.ProfessionalSkills.Where(ps => ps.Status == true).ToListAsync();
             }
             catch (Exception ex)
             {
