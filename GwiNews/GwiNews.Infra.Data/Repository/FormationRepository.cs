@@ -17,8 +17,8 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var Formations = await _context.Formations.ToListAsync();
-                return Formations;
+                var formations = await _context.Formations.ToListAsync();
+                return formations;
             }
             catch (Exception ex)
             {
@@ -30,8 +30,8 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var Formation = await _context.Formations.FindAsync(id);
-                return Formation;
+                var formation = await _context.Formations.FindAsync(id);
+                return formation;
             }
             catch (Exception ex)
             {
@@ -43,8 +43,8 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var Formations = await _context.Formations.Where(f => f.Status == true).ToListAsync();
-                return Formations;
+                var formations = await _context.Formations.Where(f => f.Status == true).ToListAsync();
+                return formations;
             }
             catch (Exception ex)
             {
@@ -56,8 +56,8 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var Formations = await _context.Formations.Where(f => f.UserId == userId).ToListAsync();
-                return Formations;
+                var formations = await _context.Formations.Where(f => f.UserId == userId).ToListAsync();
+                return formations;
             }
             catch (Exception ex)
             {
@@ -69,8 +69,8 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var Formations = await _context.Formations.Where(f => f.Status == true && f.UserId == userId).ToListAsync();
-                return Formations;
+                var formations = await _context.Formations.Where(f => f.Status == true && f.UserId == userId).ToListAsync();
+                return formations;
             }
             catch (Exception ex)
             {
