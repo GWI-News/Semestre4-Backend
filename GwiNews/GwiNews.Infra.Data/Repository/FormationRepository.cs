@@ -17,8 +17,8 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var formations = await _context.Formations.ToListAsync();
-                return formations;
+                var Formations = await _context.Formations.ToListAsync();
+                return Formations;
             }
             catch (Exception ex)
             {
@@ -30,8 +30,8 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var formation = await _context.Formations.FindAsync(id);
-                return formation;
+                var Formation = await _context.Formations.FindAsync(id);
+                return Formation;
             }
             catch (Exception ex)
             {
@@ -43,8 +43,8 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var formations = await _context.Formations.Where(f => f.Status == true).ToListAsync();
-                return formations;
+                var Formations = await _context.Formations.Where(f => f.Status == true).ToListAsync();
+                return Formations;
             }
             catch (Exception ex)
             {
@@ -56,8 +56,21 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var formations = await _context.Formations.Where(f => f.Status == true && f.UserId == userId).ToListAsync();
-                return formations;
+                var Formations = await _context.Formations.Where(f => f.UserId == userId).ToListAsync();
+                return Formations;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<IEnumerable<Formation>> GetActiveFormationsByUserId(Guid userId)
+        {
+            try
+            {
+                var Formations = await _context.Formations.Where(f => f.Status == true && f.UserId == userId).ToListAsync();
+                return Formations;
             }
             catch (Exception ex)
             {
@@ -100,7 +113,7 @@ namespace GwiNews.Infra.Data.Repository
                 formation.Status = false;
                 _context.Update(formation);
                 await _context.SaveChangesAsync();
-                return await _context.Formations.ToListAsync();
+                return await _context.Formations.Where(f => f.Status == true).ToListAsync();
             }
             catch (Exception ex)
             {

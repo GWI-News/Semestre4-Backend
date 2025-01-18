@@ -33,6 +33,7 @@ namespace GwiNews.Infra.IoC
             services.AddScoped<IReaderUserService, ReaderUserService>();
             services.AddScoped<IProfessionalInformationService, ProfessionalInformationService>();
             services.AddScoped<IProfessionalSkillService, ProfessionalSkillService>();
+            services.AddScoped<IFormationService, FormationService>();
 
             services.AddAutoMapper(typeof(DtoToDomainMappingProfile));
 
