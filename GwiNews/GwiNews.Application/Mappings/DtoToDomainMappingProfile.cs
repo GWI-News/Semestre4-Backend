@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GwiNews.Application.DTOs.FormationDTO;
 using GwiNews.Application.DTOs.News;
 using GwiNews.Application.DTOs.NewsCategory;
 using GwiNews.Application.DTOs.NewsSubcategory;
@@ -28,6 +29,8 @@ namespace GwiNews.Application.Mappings
             CreateMap<UpdateProfessionalInformationDTO, ProfessionalInformation>();
             CreateMap<CreateProfessionalSkillDTO, ProfessionalSkill>();
             CreateMap<UpdateProfessionalSkillDTO, ProfessionalSkill>();
+            CreateMap<CreateFormationDTO, Formation>();
+            CreateMap<UpdateFormationDTO, Formation>();
         }
     }
 }
