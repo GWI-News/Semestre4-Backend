@@ -3,6 +3,7 @@ using GwiNews.Application.DTOs.News;
 using GwiNews.Application.DTOs.NewsCategory;
 using GwiNews.Application.DTOs.NewsSubcategory;
 using GwiNews.Application.DTOs.ProfessionalInformation;
+using GwiNews.Application.DTOs.ProfessionalSkill;
 using GwiNews.Application.DTOs.ReaderUser;
 using GwiNews.Application.DTOs.UserWithNews;
 using GwiNews.Domain.Entities;
@@ -25,6 +26,8 @@ namespace GwiNews.Application.Mappings
             CreateMap<UpdateReaderUserDTO, ReaderUser>();
             CreateMap<CreateProfessionalInformationDTO, ProfessionalInformation>();
             CreateMap<UpdateProfessionalInformationDTO, ProfessionalInformation>();
+            CreateMap<CreateProfessionalSkillDTO, ProfessionalSkill>();
+            CreateMap<UpdateProfessionalSkillDTO, ProfessionalSkill>();
         }
     }
 }
