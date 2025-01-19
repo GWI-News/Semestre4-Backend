@@ -17,7 +17,7 @@ namespace GwiNews.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<ResponseModelDTO<IEnumerable<ProfessionalSkill>>> GetProfessionaSkills()
+        public async Task<ResponseModelDTO<IEnumerable<ProfessionalSkill>>> GetProfessionalSkills()
         {
             ResponseModelDTO<IEnumerable<ProfessionalSkill>> response = new ResponseModelDTO<IEnumerable<ProfessionalSkill>>();
             try
@@ -35,7 +35,7 @@ namespace GwiNews.Application.Services
             }
         }
 
-        public async Task<ResponseModelDTO<ProfessionalSkill>> GetProfessionaSkill(Guid id)
+        public async Task<ResponseModelDTO<ProfessionalSkill>> GetProfessionalSkill(Guid id)
         {
             ResponseModelDTO<ProfessionalSkill> response = new ResponseModelDTO<ProfessionalSkill>();
             try
@@ -53,7 +53,7 @@ namespace GwiNews.Application.Services
             }
         }
 
-        public async Task<ResponseModelDTO<IEnumerable<ProfessionalSkill>>> GetActiveProfessionaSkills()
+        public async Task<ResponseModelDTO<IEnumerable<ProfessionalSkill>>> GetActiveProfessionalSkills()
         {
             ResponseModelDTO<IEnumerable<ProfessionalSkill>> response = new ResponseModelDTO<IEnumerable<ProfessionalSkill>>();
             try
@@ -71,7 +71,7 @@ namespace GwiNews.Application.Services
             }
         }
 
-        public async Task<ResponseModelDTO<IEnumerable<ProfessionalSkill>>> GetProfessionaSkillsByUserId(Guid userId)
+        public async Task<ResponseModelDTO<IEnumerable<ProfessionalSkill>>> GetProfessionalSkillsByUserId(Guid userId)
         {
             ResponseModelDTO<IEnumerable<ProfessionalSkill>> response = new ResponseModelDTO<IEnumerable<ProfessionalSkill>>();
             try
@@ -89,7 +89,7 @@ namespace GwiNews.Application.Services
             }
         }
 
-        public async Task<ResponseModelDTO<IEnumerable<ProfessionalSkill>>> GetActiveProfessionaSkillsByUserId(Guid userId)
+        public async Task<ResponseModelDTO<IEnumerable<ProfessionalSkill>>> GetActiveProfessionalSkillsByUserId(Guid userId)
         {
             ResponseModelDTO<IEnumerable<ProfessionalSkill>> response = new ResponseModelDTO<IEnumerable<ProfessionalSkill>>();
             try

@@ -18,7 +18,7 @@ namespace GwiNews.API.Controllers
         [HttpGet("Listar-Habilidades-Profissionais")]
         public async Task<IActionResult> GetProfessionalSkills()
         {
-            var response = await _professionalSkillService.GetProfessionaSkills();
+            var response = await _professionalSkillService.GetProfessionalSkills();
             if (response.Status)
             {
                 return Ok(response);
@@ -29,7 +29,7 @@ namespace GwiNews.API.Controllers
         [HttpGet("Buscar-Habilidade-Profissional/{id}")]
         public async Task<IActionResult> GetProfessionalSkill(Guid id)
         {
-            var response = await _professionalSkillService.GetProfessionaSkill(id);
+            var response = await _professionalSkillService.GetProfessionalSkill(id);
             if (response.Status)
             {
                 return Ok(response);
@@ -40,7 +40,7 @@ namespace GwiNews.API.Controllers
         [HttpGet("Listar-Habilidades-Profissionais-Ativas")]
         public async Task<IActionResult> GetActiveProfessionalSkills()
         {
-            var response = await _professionalSkillService.GetActiveProfessionaSkills();
+            var response = await _professionalSkillService.GetActiveProfessionalSkills();
             if (response.Status)
             {
                 return Ok(response);
@@ -51,7 +51,7 @@ namespace GwiNews.API.Controllers
         [HttpGet("Listar-Habilidades-Profissionais-Por-Usuário/{id}")]
         public async Task<IActionResult> GetProfessionalSkillsByUserId(Guid id)
         {
-            var response = await _professionalSkillService.GetProfessionaSkillsByUserId(id);
+            var response = await _professionalSkillService.GetProfessionalSkillsByUserId(id);
             if (response.Status)
             {
                 return Ok(response);
@@ -62,7 +62,7 @@ namespace GwiNews.API.Controllers
         [HttpGet("Listar-Habilidades-Profissionais-Ativas-Por-Usuário/{id}")]
         public async Task<IActionResult> GetActiveProfessionalSkillsByUserId(Guid id)
         {
-            var response = await _professionalSkillService.GetActiveProfessionaSkillsByUserId(id);
+            var response = await _professionalSkillService.GetActiveProfessionalSkillsByUserId(id);
             if (response.Status)
             {
                 return Ok(response);
