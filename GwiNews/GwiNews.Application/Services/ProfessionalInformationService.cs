@@ -17,7 +17,7 @@ namespace GwiNews.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<ResponseModelDTO<IEnumerable<ProfessionalInformation>>> GetProfessionaInformations()
+        public async Task<ResponseModelDTO<IEnumerable<ProfessionalInformation>>> GetProfessionalInformations()
         {
             ResponseModelDTO<IEnumerable<ProfessionalInformation>> response = new ResponseModelDTO<IEnumerable<ProfessionalInformation>>();
             try
@@ -35,7 +35,7 @@ namespace GwiNews.Application.Services
             }
         }
 
-        public async Task<ResponseModelDTO<ProfessionalInformation>> GetProfessionaInformation(Guid id)
+        public async Task<ResponseModelDTO<ProfessionalInformation>> GetProfessionalInformation(Guid id)
         {
             ResponseModelDTO<ProfessionalInformation> response = new ResponseModelDTO<ProfessionalInformation>();
             try
@@ -53,7 +53,7 @@ namespace GwiNews.Application.Services
             }
         }
 
-        public async Task<ResponseModelDTO<IEnumerable<ProfessionalInformation>>> GetActiveProfessionaInformations()
+        public async Task<ResponseModelDTO<IEnumerable<ProfessionalInformation>>> GetActiveProfessionalInformations()
         {
             ResponseModelDTO<IEnumerable<ProfessionalInformation>> response = new ResponseModelDTO<IEnumerable<ProfessionalInformation>>();
             try
@@ -71,7 +71,7 @@ namespace GwiNews.Application.Services
             }
         }
 
-        public async Task<ResponseModelDTO<IEnumerable<ProfessionalInformation>>> GetProfessionaInformationsByUserId(Guid userId)
+        public async Task<ResponseModelDTO<IEnumerable<ProfessionalInformation>>> GetProfessionalInformationsByUserId(Guid userId)
         {
             ResponseModelDTO<IEnumerable<ProfessionalInformation>> response = new ResponseModelDTO<IEnumerable<ProfessionalInformation>>();
             try
@@ -89,7 +89,7 @@ namespace GwiNews.Application.Services
             }
         }
 
-        public async Task<ResponseModelDTO<IEnumerable<ProfessionalInformation>>> GetActiveProfessionaInformationsByUserId(Guid userId)
+        public async Task<ResponseModelDTO<IEnumerable<ProfessionalInformation>>> GetActiveProfessionalInformationsByUserId(Guid userId)
         {
             ResponseModelDTO<IEnumerable<ProfessionalInformation>> response = new ResponseModelDTO<IEnumerable<ProfessionalInformation>>();
             try

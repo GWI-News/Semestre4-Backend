@@ -18,7 +18,7 @@ namespace GwiNews.API.Controllers
         [HttpGet("Listar-Informações-Profissionais")]
         public async Task<IActionResult> GetProfessionalInformations()
         {
-            var response = await _professionalInformationService.GetProfessionaInformations();
+            var response = await _professionalInformationService.GetProfessionalInformations();
             if (response.Status)
             {
                 return Ok(response);
@@ -29,7 +29,7 @@ namespace GwiNews.API.Controllers
         [HttpGet("Buscar-Informação-Profissional/{id}")]
         public async Task<IActionResult> GetProfessionalInformation(Guid id)
         {
-            var response = await _professionalInformationService.GetProfessionaInformation(id);
+            var response = await _professionalInformationService.GetProfessionalInformation(id);
             if (response.Status)
             {
                 return Ok(response);
@@ -40,7 +40,7 @@ namespace GwiNews.API.Controllers
         [HttpGet("Listar-Informações-Profissionais-Ativas")]
         public async Task<IActionResult> GetActiveProfessionalInformations()
         {
-            var response = await _professionalInformationService.GetActiveProfessionaInformations();
+            var response = await _professionalInformationService.GetActiveProfessionalInformations();
             if (response.Status)
             {
                 return Ok(response);
@@ -51,7 +51,7 @@ namespace GwiNews.API.Controllers
         [HttpGet("Listar-Informações-Profissionais-Por-Usuário/{id}")]
         public async Task<IActionResult> GetProfessionalInformationsByUserId(Guid id)
         {
-            var response = await _professionalInformationService.GetProfessionaInformationsByUserId(id);
+            var response = await _professionalInformationService.GetProfessionalInformationsByUserId(id);
             if (response.Status)
             {
                 return Ok(response);
@@ -62,7 +62,7 @@ namespace GwiNews.API.Controllers
         [HttpGet("Listar-Informações-Profissionais-Ativas-Por-Usuário/{id}")]
         public async Task<IActionResult> GetActiveProfessionalInformationsByUserId(Guid id)
         {
-            var response = await _professionalInformationService.GetActiveProfessionaInformationsByUserId(id);
+            var response = await _professionalInformationService.GetActiveProfessionalInformationsByUserId(id);
             if (response.Status)
             {
                 return Ok(response);
