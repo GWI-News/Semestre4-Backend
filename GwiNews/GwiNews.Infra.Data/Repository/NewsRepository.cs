@@ -30,7 +30,9 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
-                var news = await _context.News.FindAsync(id);
+                var news = await _context.News
+                    .Include(n => n.Subcategories)
+                    .FirstOrDefaultAsync(n => n.Id == id);
                 return news;
             }
             catch (Exception ex)
@@ -162,6 +164,30 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
+                var trackedEntity = _context.ChangeTracker.Entries<News>()
+                    .FirstOrDefault(e => e.Entity.Id == news.Id);
+                if (trackedEntity != null)
+                {
+                    _context.Entry(trackedEntity.Entity).State = EntityState.Detached;
+                }
+
+                if (news.Subcategories != null)
+                {
+                    foreach (var subcategory in news.Subcategories.Distinct())
+                    {
+                        var existsInJunctionTable = await _context.Database.ExecuteSqlRawAsync(
+                            @"SELECT COUNT(1)
+                            FROM NewsNewsSubcategory
+                            WHERE NewsId = {0} AND SubcategoriesId = {1}",
+                            news.Id, subcategory.Id);
+
+                        if (existsInJunctionTable == 0)
+                        {
+                            news.Subcategories.Remove(subcategory);
+                        }
+                    }
+                }
+
                 _context.Update(news);
                 await _context.SaveChangesAsync();
                 return news;

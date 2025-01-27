@@ -75,6 +75,13 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
+                var trackedEntity = _context.ChangeTracker.Entries<ReaderUser>()
+                    .FirstOrDefault(e => e.Entity.Id == readerUser.Id);
+                if (trackedEntity != null)
+                {
+                    _context.Entry(trackedEntity.Entity).State = EntityState.Detached;
+                }
+
                 _context.Update(readerUser);
                 await _context.SaveChangesAsync();
                 return readerUser;

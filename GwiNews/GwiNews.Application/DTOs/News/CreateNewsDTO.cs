@@ -2,7 +2,7 @@
 {
     public class CreateNewsDTO
     {
-        public NewsStatus? Status { get; set; }
+        public NewsStatusDTO? Status { get; set; }
         public string? NewsUrl { get; set; }
         public string? Title { get; set; }
         public string? Subtitle { get; set; }

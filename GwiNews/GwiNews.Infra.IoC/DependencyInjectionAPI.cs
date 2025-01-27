@@ -34,8 +34,24 @@ namespace GwiNews.Infra.IoC
             services.AddScoped<IProfessionalInformationService, ProfessionalInformationService>();
             services.AddScoped<IProfessionalSkillService, ProfessionalSkillService>();
             services.AddScoped<IFormationService, FormationService>();
+            services.AddScoped<IFirestoreToSqlServerDataStreamingService, FirestoreToSqlServerDataStreamingService>();
 
             services.AddAutoMapper(typeof(DtoToDomainMappingProfile));
+
+            try
+            {
+                string firestoreKeyPath = Path.Combine(AppContext.BaseDirectory, "gwinews-firestore-api-key.json");
+                string firestoreKeyContent = File.ReadAllText(firestoreKeyPath);
+                Environment.SetEnvironmentVariable("GWINEWS_FIRESTORE_API_KEY", firestoreKeyContent);
+            }
+            catch (Exception ex)
+            {
+                string firestoreKeyContent = Environment.GetEnvironmentVariable("GWINEWS_FIRESTORE_API_KEY");
+                if (string.IsNullOrEmpty(firestoreKeyContent))
+                {
+                    throw new InvalidOperationException("A variável de ambiente GWINEWS_FIRESTORE_API_KEY não está definida.");
+                }
+            }
 
             return services;
         }

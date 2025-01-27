@@ -96,6 +96,13 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
+                var trackedEntity = _context.ChangeTracker.Entries<ProfessionalSkill>()
+                    .FirstOrDefault(e => e.Entity.Id == professionalSkill.Id);
+                if (trackedEntity != null)
+                {
+                    _context.Entry(trackedEntity.Entity).State = EntityState.Detached;
+                }
+
                 _context.Update(professionalSkill);
                 await _context.SaveChangesAsync();
                 return professionalSkill;

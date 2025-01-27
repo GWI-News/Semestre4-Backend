@@ -96,6 +96,13 @@ namespace GwiNews.Infra.Data.Repository
         {
             try
             {
+                var trackedEntity = _context.ChangeTracker.Entries<Formation>()
+                    .FirstOrDefault(e => e.Entity.Id == formation.Id);
+                if (trackedEntity != null)
+                {
+                    _context.Entry(trackedEntity.Entity).State = EntityState.Detached;
+                }
+    
                 _context.Update(formation);
                 await _context.SaveChangesAsync();
                 return formation;
