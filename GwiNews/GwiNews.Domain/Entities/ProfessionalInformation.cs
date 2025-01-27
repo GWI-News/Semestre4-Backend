@@ -28,7 +28,6 @@ namespace GwiNews.Domain.Entities
         public string? WorkPlatformUrl { get; set; }
         [Required]
         public Guid? UserId { get; set; }
-        [Required]
         public ReaderUser? User { get; set; }
     }
 }

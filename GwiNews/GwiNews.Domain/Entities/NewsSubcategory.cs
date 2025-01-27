@@ -13,7 +13,6 @@ namespace GwiNews.Domain.Entities
         public bool? Status { get; set; }
         [Required]
         public Guid? CategoryId { get; set; }
-        [Required]
         public NewsCategory? Category { get; set; }
         public ICollection<News>? News { get; set; }
     }

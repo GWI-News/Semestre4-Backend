@@ -1,6 +1,6 @@
 ﻿namespace GwiNews.Application.DTOs
 {
-    public enum UserRole
+    public enum UserRoleDTO
     {
         Administrator = 0,
         Editor = 1,
@@ -10,7 +10,7 @@
         Financial = 5
     }
 
-    public enum NewsStatus
+    public enum NewsStatusDTO
     {
         Published = 0,
         InRevision = 1,

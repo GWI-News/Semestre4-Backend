@@ -22,7 +22,6 @@ namespace GwiNews.Domain.Entities
         public bool? Status { get; set; }
         [Required]
         public Guid? UserId { get; set; }
-        [Required]
         public ReaderUser? User { get; set; }
     }
 }
