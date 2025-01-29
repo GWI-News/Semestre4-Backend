@@ -1,4 +1,4 @@
-# Semestre4-Backend-Refactory
+# Semestre4-Backend
 Repositório para desenvolvimento do software GWI News, para o cumprimento do Projeto Transdisciplinar do curso Desenvolvimento de Software Multiplataforma, na faculdade Fatec Matão - Luiz Marchesan.
 
 ## Padrões de GitHub Branch, Commit e Pull Request
